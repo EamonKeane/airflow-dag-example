@@ -1,0 +1,6 @@
+cx_Oracle
+lifetimes
+google-api-python-client
+oauth2client
+datalab
+matplotlib
