@@ -38,7 +38,7 @@ file_path = "/root/kubeconfig/kubeconfig"
 
 passing = KubernetesPodOperator(namespace='airflow4',
                           image="python:3.6",
-                          args=["python", "dags/test-python.py"],
+                          cmds=["python", "dags/test-python.py"],
                           labels={"foo": "bar"},
                           name="passing-test",
                           task_id="passing-task",
