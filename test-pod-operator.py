@@ -30,6 +30,7 @@ volume_config = {
     'persistentVolumeClaim':
         {
             'claimName': 'airflow-dags2'
+            read
         }
 }
 
@@ -38,7 +39,7 @@ file_path = "/root/kubeconfig/kubeconfig"
 
 passing = KubernetesPodOperator(namespace='airflow4',
                           image="python:3.6",
-                          cmds=["python dags/test-python.py"],
+                          args=["python", "dags/test-python.py"],
                           labels={"foo": "bar"},
                           name="passing-test",
                           task_id="passing-task",
