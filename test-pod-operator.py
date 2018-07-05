@@ -3,7 +3,6 @@ from datetime import datetime, timedelta
 from airflow.contrib.operators.kubernetes_pod_operator import KubernetesPodOperator
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.contrib.kubernetes.volume_mount import VolumeMount
-from airflow.contrib.kubernetes.volume import Volume
 
 default_args = {
     'owner': 'airflow',
@@ -34,6 +33,7 @@ volume_config = {
 }
 
 volume = Volume(name='airflow-dags', configs=volume_config)
+file_path = "/root/kubeconfig/kubeconfig"
 
 passing = KubernetesPodOperator(namespace='default',
                           image="python:3.6",
@@ -42,6 +42,7 @@ passing = KubernetesPodOperator(namespace='default',
                           name="passing-test",
                           task_id="passing-task",
                           volume_mounts=[volume_mount],
+                          config_file=file_path
                           volumes=[volume],
                           get_logs=True,
                           dag=dag
