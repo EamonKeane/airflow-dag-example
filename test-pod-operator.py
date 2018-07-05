@@ -30,7 +30,6 @@ volume_config = {
     'persistentVolumeClaim':
         {
             'claimName': 'airflow-dags2'
-            read
         }
 }
 
