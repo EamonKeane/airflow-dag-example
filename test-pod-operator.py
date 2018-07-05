@@ -36,7 +36,7 @@ volume_config = {
 volume = Volume(name='airflow-dags', configs=volume_config)
 file_path = "/root/kubeconfig/kubeconfig"
 
-passing = KubernetesPodOperator(namespace='default',
+passing = KubernetesPodOperator(namespace='airflow4',
                           image="python:3.6",
                           cmds=["python dags/test-python.py"],
                           labels={"foo": "bar"},
