@@ -42,7 +42,7 @@ passing = KubernetesPodOperator(namespace='default',
                           name="passing-test",
                           task_id="passing-task",
                           volume_mounts=[volume_mount],
-                          config_file=file_path
+                          config_file=file_path,
                           volumes=[volume],
                           get_logs=True,
                           dag=dag
