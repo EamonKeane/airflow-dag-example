@@ -29,7 +29,7 @@ volume_mount = VolumeMount('airflow-dags',
 volume_config = {
     'persistentVolumeClaim':
         {
-            'claimName': 'airflow-dags2'
+            'claimName': 'airflow-dags'
         }
 }
 
