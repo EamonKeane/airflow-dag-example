@@ -1,9 +1,3 @@
-### Need to add this at the top of the file to be able to save images
-## These two lines added to resolve https://stackoverflow.com/questions/37604289/tkinter-tclerror-no-display-name-and-no-display-environment-variable?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-import matplotlib
-matplotlib.use('Agg')
-###
-from airflow.hooks.oracle_hook import OracleHook
 from datetime import datetime
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
