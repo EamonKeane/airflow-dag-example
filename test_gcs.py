@@ -27,7 +27,7 @@ dag = DAG(
 
 
 def test_gcs(ds, **context):
-    test_file = "test_gcs.py"
+    test_file = "/usr/local/airflow/dags/test_gcs.py"
     storage_bucket = "icabbi-202810-airflow"
     GoogleCloudStorageHook(google_cloud_storage_conn_id='google_conn').upload(bucket=storage_bucket,
                                                                                       object=test_file,
